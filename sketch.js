@@ -25,13 +25,13 @@ function setup(){
 
 function draw() {
     background(backgroundimg);
-    if (cat.X-mouse.X < (cat.width - mouse.width) /2 ) {
-      cat.collide(mouse);
+    if (cat.X  -  mouse.X < (cat.width - mouse.width) /2 ) {
+      //Write condition here to evalute if tom and jerry collide
         cat.velocityX = 0;
 cat.addAnimation("catLastImage",tomImg3);
 cat.changeAnimation("catLastImage");
     }
-    //Write condition here to evalute if tom and jerry collide
+    
   
     mouse.display();
     cat.display();
