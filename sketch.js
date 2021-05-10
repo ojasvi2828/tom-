@@ -16,22 +16,23 @@ function setup(){
    
     //create tom and jerry sprites here
     mouse = createSprite(150,660,20,20);
-    mouse.addAnimation(jerryImg1);
+    mouse.addAnimation("jerry",jerryImg1);
     mouse.scale = 0.2;
     cat = createSprite(690,680,50,50);
-    cat.addAnimation(tomImg1);
+    cat.addAnimation("tom",tomImg1);
     cat.scale = 0.2;
 }
 
 function draw() {
     background(backgroundimg);
-    if (cat.x  -  mouse.x < (cat.width - mouse.width) /2 ) {
+    if (cat.x  -  mouse.x < = (cat.width - mouse.width) /2 ) {
       //Write condition here to evalute if tom and jerry collide
         cat.velocityX = 0;
+        cat.x = 300;
 cat.addAnimation("catLastImage",tomImg3);
 cat.changeAnimation("catLastImage",tomImg3);
-mouse.addAnimation("images/jerryTwo.png","images/jerryThree.png",jerryImg2);
-mouse.changeAnimation("images/jerryTwo.png","images/jerryThree.png",jerryImg2);
+mouse.addAnimation("jerryWalking",jerryImg3);
+mouse.changeAnimation("jerryWalking",jerryImg3);
     }
     
   
@@ -49,7 +50,9 @@ function keyPressed(){
     cat.velocityX= -5;
     cat.addAnimation("catRunning",tomImg2);
     cat.changeAnimation("catRunning");
-    
+    mouse.addAnimation("jerryStanding",jerryImg2);
+mouse.changeAnimation("jerryStanding",jerryImg2);
+
 }
 
 }
